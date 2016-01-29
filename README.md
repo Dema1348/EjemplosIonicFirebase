@@ -1,4 +1,4 @@
-3 ejemplos funcionales que muestran la potencia de ionic + firebase
+3 ejemplos funcionales de ionic con firebase
 =====================
 
 Para iniciar el proyecto instalar las dependencias con ;
