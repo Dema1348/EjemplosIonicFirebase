@@ -1,0 +1,28 @@
+
+<ion-view view-title="Room">
+	 <ion-nav-title>
+	  {{room.name}}
+	</ion-nav-title>	
+	<ion-nav-buttons side="secondary">
+      <button class="button icon-left ion-person-add button-dark" ng-click="join()" ng-disabled="isJoin">Join</button>
+    </ion-nav-buttons>		
+
+   <ion-content class="padding" on-swipe-up="up()" on-swipe-down="down()">
+	<ion-list >
+		<div class="item item-divider">
+		    how do you feel? 
+		</div>
+		<div class="item range range-positive">
+		    <i class="icon ion-sad-outline"></i>
+		    <input type="range" ng-model="user.score" min="-50" max="50" value="user.score" ng-change="change()">
+		    <i class="icon ion-happy-outline"></i>
+		 </div>
+	    <ion-item collection-repeat="p in people | orderBy:'-timeCreate'" class="item outpadding questions " item-width="25%"
+    item-height="100px" >
+    	<div class="p green" ng-style="{opacity:p.score*0.02}"></div>	
+	    <div class="p red" ng-style="{opacity:p.score*-0.02}"></div>	
+	    </ion-item>
+	</ion-list>
+	
+   </ion-content>
+</ion-view>

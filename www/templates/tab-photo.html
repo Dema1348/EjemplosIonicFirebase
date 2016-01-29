@@ -1,0 +1,46 @@
+<ion-view view-title="Room Photo">
+  <ion-content class="">
+    <div class="list">
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Photo Name" ng-model="newPhoto.name">
+          </label>
+          <button class="button button-small button-positive"  ng-click="getPhoto()">
+            Select Photo
+          </button>
+        </div>
+
+        <button class="button button-block button-positive" ng-disabled="!newPhoto.url" ng-click="upload()">
+            Upload
+        </button>
+        
+    </div>
+
+
+
+    
+    <div class="list card">
+      <div class="item">
+        <h2>{{photo.name}}</h2>
+      </div>
+      <div class="item item-image">
+        <img ng-src="data:image/jpeg;base64, {{photo.url}}"  ng-click="openModal()">
+      </div>
+      <a class="item item-icon-left dark" href="#">
+        <i class="icon ion-clock"></i>
+        Uploaded <span am-time-ago="photo.timeCreate"></span>
+      </a>
+    </div>
+
+
+  <script id="image-modal.html" type="text/ng-template">
+              <div class="modal image-modal transparent" ng-click="closeModal()">
+                  <ion-pane class="transparent">
+                     <img ng-src="data:image/jpeg;base64, {{image}}"  class="fullscreen-image" />
+                  </ion-pane>
+              </div>
+    </script>
+
+
+  </ion-content>
+</ion-view>

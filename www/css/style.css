@@ -1,0 +1,104 @@
+.questions.ng-enter  {
+    -webkit-animation:1.5s anim_enter;
+    -moz-animation:1.5s anim_enter;
+    -o-animation:1.5s anim_enter;
+    animation:1.5s anim_enter;
+    position:relative;
+}
+@keyframes anim_enter {
+    from { 
+        left:100%;
+    }
+    to { 
+        left:0;
+    }
+}
+
+@-webkit-keyframes anim_enter {
+    from {
+        left:100%;
+    }
+    to { 
+        left:0;
+    }
+}
+
+.questions.ng-leave{  
+    -webkit-animation:1.5s anim_leave;
+    -moz-animation:1.5s anim_leave;
+    -o-animation:1.5s anim_leave;
+    animation:1.5s anim_leave;
+    position:relative;
+}
+
+@keyframes anim_leave {
+    from { 
+        left:0;
+    }
+    to {
+        left:100%;
+    }
+}
+
+@-webkit-keyframes anim_leave {
+    from { 
+        left:0;
+    }
+    to {
+        left:100%;
+    }
+}
+
+.green{
+    background: #009688;
+}
+.red{
+    background: #F44336;
+}
+.outpadding{
+    padding: 0!important;
+}
+.p{
+    position: absolute!important;
+    width:100%!important;
+    height: 100%!important;
+}
+
+
+/* Empty. Add your own CSS if you like */
+.transparent {
+  background: transparent !important;
+}
+.image-modal {
+  width: 100% !important;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+}
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 100%;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+/* Fix modal backdrop for smaller devices */
+@media (max-width: 679px) {
+  .active .modal-backdrop-bg {
+    opacity: .5;
+  }
+  .modal-backdrop-bg {
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    background-color: #000;
+    opacity: 0;
+  }
+}
+
+
+

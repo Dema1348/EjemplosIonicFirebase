@@ -1,0 +1,30 @@
+<ion-view view-title="Question">
+ <ion-nav-title>
+  {{roomQuestion.name}} Questions
+</ion-nav-title>
+   <ion-content class="padding">
+		<div class="list">
+	      <div class="item item-input-inset">
+	        <label class="item-input-wrapper">
+	          <input type="text" placeholder="Question Name" ng-model="question.name">
+	        </label>
+	        <button class="button button-small button-positive" ng-disabled="!question.name" ng-click="create(question)">
+	          Create
+	        </button>
+	      </div>
+	  </div>
+
+	  <ion-list>
+	  	<div class="item item-divider">
+		    Vote for the question 
+		    <p>Swipe-Left: Negative | Swipe-Right: Positive</p>
+		</div>
+	    <ion-item ng-repeat="question in questions | orderBy:'-score'" class="item item-text-wrap questions" on-swipe-left="down(question)" on-swipe-right="up(question)"  >
+	       	¿{{question.name}}?
+	       	<span class="badge badge-assertive">{{question.score}}</span>
+	    </ion-item>
+	  </ion-list>
+
+
+  </ion-content>
+</ion-view>

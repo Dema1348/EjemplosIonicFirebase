@@ -1,0 +1,23 @@
+<ion-view view-title="Rooms Colors">
+  <ion-content class="padding">
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Room Name" ng-model="room.name">
+        </label>
+        <button class="button button-small button-positive" ng-disabled="!room.name" ng-click="create(room)">
+          Create
+        </button>
+      </div>
+  </div>
+
+  <ion-list>
+    <ion-item ng-repeat="room in rooms | orderBy:'-timeCreate'" class="item item-button-right">
+       Title: {{room.name}}
+      <a class="button button-dark"  href="#/tab/rooms/{{room.$id}}">
+        <i class="icon ion-arrow-right-c"></i>
+      </a>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+</ion-view>
